@@ -44,6 +44,7 @@ export default {
             },
 
          ],
+
       }
    }
 
@@ -56,11 +57,11 @@ export default {
    <!-- Call To Action - Section -->
    <section>
 
-      <h3>We Create New Worlds!</h3>
+      <h3 class="font-h">We Create New Worlds!</h3>
 
-      <h2>Want Tips On Your <br> Storytelling?</h2>
+      <h2 class="font-h">Want Tips On Your <br> Storytelling?</h2>
 
-      <p>Join our newsletter for tips on how to elevate your brand through storytelling</p>
+      <p class="font-p">Join our newsletter for tips on how to elevate your brand through storytelling</p>
 
       <div>
 

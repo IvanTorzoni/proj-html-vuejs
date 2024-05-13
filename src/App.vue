@@ -11,7 +11,7 @@ export default {
     AppHeader,
     AppJumbo,
     AppFooter,
-    
+
   }
 
 }
@@ -30,4 +30,44 @@ export default {
 
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+@use "./style/partials/variables" as *;
+
+// TYPOGRAPHY UTILITIES
+
+// Fonts Utilities
+
+.ms-font-h {
+  font-family: "Chakra Petch", sans-serif;
+
+}
+
+.ms-font-p {
+  font-family: "Barlow", sans-serif;
+
+}
+
+// Colors Utilities
+
+.ms-text-d-purple {
+  color: $pj-dark-purple;
+
+}
+
+.ms-text-l-purple {
+  color: $pj-light-purple;
+
+}
+
+.ms-text-orange {
+  color: $pj-orange;
+
+}
+
+.ms-text-grey {
+  color: $pj-grey;
+
+}
+
+</style>

@@ -11,7 +11,11 @@ export default {
                 {
                     title: "About",
                     routeName: "about",
-                }
+                },
+                {
+                    title: "Contact",
+                    routeName: "contact",
+                },
             ]
         }
     }
@@ -20,6 +24,7 @@ export default {
 </script>
 
 <template>
+    <h2>header</h2>
     <header>
         <ul>
             <li v-for="item in menu"> 

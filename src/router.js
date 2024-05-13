@@ -5,8 +5,9 @@ import { createRouter, createWebHistory } from "vue-router";
 //importo pagine per il menù 
 import HomePage from "./pages/HomePage.vue";
 import AboutPage from "./pages/AboutPage.vue";
+import ContactPage from "./pages/ContactPage.vue";
 
-//Creo la struttura per il router (WIP)
+//Creo la struttura per il router 
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -19,6 +20,11 @@ export const router = createRouter({
       path: "/about",
       name: "about",
       component: AboutPage,
+    },
+    {
+      path: "/contact",
+      name: "contact",
+      component: ContactPage,
     },
   ],
 });

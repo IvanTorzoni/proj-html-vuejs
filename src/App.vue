@@ -19,7 +19,6 @@ export default {
   <AppJumbo />
   <!-- Tag per i componenti del router (pagine dinamiche). Per i componenti fissi come header footer ecc inserire il tag del componente corrispettivo -->
   <router-view></router-view>
-  <!-- Comment -->
   <AppFooter />
 </template>
 

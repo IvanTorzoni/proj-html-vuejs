@@ -6,9 +6,9 @@ export default {
 </script>
 
 <template>
- <h2>Facts</h2>
+
+   <h2>Facts</h2>
+
 </template>
 
-<style lang="scss" scoped>  
-
-</style>
+<style lang="scss" scoped></style>

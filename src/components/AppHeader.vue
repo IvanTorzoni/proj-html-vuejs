@@ -2,6 +2,7 @@
 export default {
     data() {
         return {
+            
             //Gestione link del menù
             menu: [
                 {
@@ -17,6 +18,7 @@ export default {
                     routeName: "contact",
                 },
             ]
+
         }
     }
 
@@ -24,18 +26,26 @@ export default {
 </script>
 
 <template>
+
     <h2>header</h2>
+
     <header>
+
         <ul>
-            <li v-for="item in menu"> 
+
+            <li v-for="item in menu">
+
                 <!-- router link serve come a tag HTML (questo tag fa parte del router stesso). Aggiungere to="{ name : valore corrente del ciclo.nome inserito nel name del router }" -->
-                <router-link :to="{name: item.routeName}" >
+                <router-link :to="{ name: item.routeName }">
                     {{ item.title }}
                 </router-link>
-             </li>
+
+            </li>
+
         </ul>
+
     </header>
+
 </template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

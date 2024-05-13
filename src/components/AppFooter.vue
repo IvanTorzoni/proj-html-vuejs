@@ -55,79 +55,96 @@ export default {
 <template>
 
    <!-- Call To Action - Section -->
-   <section>
+   <section class="ms-bg-purple py-3">
 
-      <h3 class="ms-font-h ms-text-orange">We Create New Worlds!</h3>
+      <div class="container-sm d-flex flex-column justify-content-center align-items-center">
 
-      <h2 class="ms-font-h">Want Tips On Your <br> Storytelling?</h2>
+         <h5 class="ms-font-cp ms-text-orange">We Create New Worlds!</h5>
 
-      <p class="font-p">Join our newsletter for tips on how to elevate your brand through storytelling</p>
+         <h2 class="ms-font-cp text-white text-center">Want Tips On Your <br> Storytelling?</h2>
 
-      <div>
+         <p class="font-b text-white">Join our newsletter for tips on how to elevate your brand through storytelling</p>
 
-         <input type="email" aria-label="Enter your email">
+         <!-- Email Imput&Submit -->
+         <div class="bg-white w-75 d-flex justify-content-between p-2  rounded-pill">
 
-         <button>Submit</button>
+            <input class="rounded-pill border border-white flex-fill" type="email" aria-label="Enter your email"
+               placeholder="Enter your email">
+
+            <button class="ms-bg-pink btn rounded-pill ms-2">Submit</button>
+
+         </div>
+         <!-- /Email Imput&Submit -->
 
       </div>
-
 
    </section>
    <!-- /Call To Action - Section -->
 
    <!-- Footer -->
-   <footer>
+   <footer class="py-3">
 
-      <!-- Footer Menu - Section -->
-      <section>
+      <div class="container-sm">
 
-         <!-- Footer Logo -->
-         <img src="../assets/Img/main-img/footer-logo.png" alt="Logo Anidio">
-         <!-- /Footer Logo -->
+         <!-- Footer Menu - Section -->
+         <section class="row justify-content-between align-items-center">
 
-         <!-- Footer Menu -->
-         <ul>
+            <!-- Footer Logo -->
+            <div class="col-5">
 
-            <li v-for="item in menu">
+               <img src="../assets/Img/main-img/footer-logo.png" alt="Logo Anidio">
 
-               <router-link>
+            </div>
+            <!-- /Footer Logo -->
 
-                  {{ item.title }}
+            <!-- Footer Menu -->
+            <ul class="col-7 row row-col-7 text-end">
 
-               </router-link>
+               <li v-for="item in menu" class="col">
 
-            </li>
+                  <router-link>
 
-         </ul>
-         <!-- /Footer Menu -->
+                     {{ item.title }}
 
-      </section>
-      <!-- /Footer Menu - Section -->
+                  </router-link>
 
-      <!-- Footer Copyright - Section -->
-      <section>
+               </li>
 
-         <p>Copyright © 2022 <a href="https://www.templatemonster.com/authors/softivus/">Softivus</a>. All rights
-            reserved. </p>
+            </ul>
+            <!-- /Footer Menu -->
 
-         <!-- Footer Menu -->
-         <ul>
+         </section>
+         <!-- /Footer Menu - Section -->
 
-            <li v-for="social in socialsMenu">
+         <hr>
 
-               <router-link>
+         <!-- Footer Copyright - Section -->
+         <section class="row justify-content-between align-items-center">
 
-                  <i :class="`${social.iconClasses}`"></i>
-                  
-               </router-link>
+            <p class="col m-0">Copyright © 2022 <a class="ms-text-l-purple"
+                  href="https://www.templatemonster.com/authors/softivus/"><strong>Softivus</strong></a>. All rights
+               reserved. </p>
 
-            </li>
+            <!-- Footer Socials -->
+            <ul class="col row row-col-8 text-end">
 
-         </ul>
-         <!-- /Footer Menu -->
+               <li v-for="social in socialsMenu" class="col justify-content-end">
 
-      </section>
-      <!-- /Footer Copyright - Section -->
+                  <a href="">
+
+                     <i :class="`${social.iconClasses}`"></i>
+
+                  </a>
+
+               </li>
+
+            </ul>
+            <!-- /Footer Socials -->
+
+         </section>
+         <!-- /Footer Copyright - Section -->
+
+      </div>
 
    </footer>
    <!-- /Footer -->

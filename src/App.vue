@@ -38,12 +38,12 @@ export default {
 
 // Fonts Utilities
 
-.ms-font-h {
+.ms-font-cp {
   font-family: "Chakra Petch", sans-serif;
 
 }
 
-.ms-font-p {
+.ms-font-b {
   font-family: "Barlow", sans-serif;
 
 }
@@ -67,6 +67,16 @@ export default {
 
 .ms-text-grey {
   color: $pj-grey;
+
+}
+
+.ms-bg-purple {
+  background-color: $pj-purple;
+
+}
+
+.ms-bg-pink {
+  background-color: $pj-pink;
 
 }
 

@@ -54,10 +54,15 @@ export default {
 
 <template>
 
-   <!-- Call To Action - Section -->
-   <section class="ms-bg-purple py-3">
+   <!-- Newsletter - Section -->
+   <section class="counter-section py-3">
 
-      <div class="container-sm d-flex flex-column justify-content-center align-items-center">
+      <div class="count-top-shape">
+         <img src="../assets/Img/main-img/shape-top.png" alt="counter-shape">
+      </div>
+
+      <!-- Contents Newsletter -->
+      <div class="container-sm d-flex flex-column justify-content-center align-items-center p-5">
 
          <h5 class="ms-font-cp ms-text-orange">We Create New Worlds!</h5>
 
@@ -77,20 +82,25 @@ export default {
          <!-- /Email Imput&Submit -->
 
       </div>
+      <!-- /Contents Newsletter -->
+
+      <div class="count-bottom-shape">
+         <img src="../assets/Img/main-img/shape-bottom.png" alt="counter-shape">
+      </div>
 
    </section>
-   <!-- /Call To Action - Section -->
+   <!-- /Newsletter - Section -->
 
    <!-- Footer -->
-   <footer class="py-3">
+   <footer class="py-5">
 
       <div class="container">
 
          <!-- Footer Menu - Section -->
-         <section class="row justify-content-between align-items-center">
+         <section class="d-flex justify-content-between align-items-center">
 
             <!-- Footer Logo -->
-            <div class="col-5">
+            <div>
 
                <img src="../assets/Img/main-img/footer-logo.png" alt="Logo Anidio">
 
@@ -98,13 +108,13 @@ export default {
             <!-- /Footer Logo -->
 
             <!-- Footer Menu -->
-            <ul class="col-7 row row-col-7 text-end">
+            <ul class="row row-col-6 text-end ms-font-cp">
 
                <li v-for="item in menu" class="col">
 
                   <router-link :to="{ name: item.routeName }">
 
-                     <span>{{ item.title }}</span>
+                     <span class="col fw-bold">{{ item.title }}</span>
 
                   </router-link>
 
@@ -120,22 +130,26 @@ export default {
          <hr>
 
          <!-- Footer Copyright - Section -->
-         <section class="row justify-content-between align-items-center">
+         <section class="d-flex justify-content-between align-items-center">
 
             <p class="col m-0">Copyright © 2022 <a class="ms-text-l-purple"
                   href="https://www.templatemonster.com/authors/softivus/"><strong>Softivus</strong></a>. All rights
                reserved. </p>
 
             <!-- Footer Socials -->
-            <ul class="col row row-col-8 text-end">
+            <ul class="row row-col-6 text-end">
 
                <li v-for="social in socialsMenu" class="col justify-content-end">
 
-                  <a href="">
+                  <div class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
 
-                     <i :class="`${social.iconClasses}`"></i>
+                     <a href="">
+   
+                        <i class="ms-text-l-purple" :class="`${social.iconClasses}`"></i>
+   
+                     </a>
 
-                  </a>
+                  </div>
 
                </li>
 
@@ -152,4 +166,40 @@ export default {
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.counter-section {
+   background: url(../assets/Img/main-img/counter-bg.png) no-repeat center center;
+   background-size: cover;
+   position: relative;
+   overflow: hidden;
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+   .count-top-shape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+         display: block;
+      }
+   }
+
+   .count-bottom-shape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+   }
+
+}
+
+.logo-container {
+   height: 25px;
+   width: 25px;
+
+}
+</style>

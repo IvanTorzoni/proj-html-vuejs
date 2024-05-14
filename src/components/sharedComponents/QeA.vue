@@ -6,12 +6,16 @@ export default {
 
    },
 
-   methods:{
+   methods: {
 
-      getImg(imgPath) {
+      getAnswer() {
 
-         return new URL(`../../assets/Img/contact-img/${imgPath}-contact.png`, import.meta.url).href;
-      }
+         console.log("clicked");
+
+         this.qeaElem.answerOut = !this.qeaElem.answerOut
+
+      },
+
    }
 
 }
@@ -20,19 +24,36 @@ export default {
 
 <template>
 
-<div class="d-flex justify-content-between align-items-center border rounded-2 my-2 p-2">
+   <div>
 
-   <h4>{{ qeaElem.question }}</h4>
+   </div>
 
-   <i>plus</i>
-</div>
+   <div class="d-flex justify-content-between align-items-center border rounded-2 my-2 p-2 px-3">
 
-<div class="d-flex justify-content-between align-items-center">
+      <h4 class="m-0">{{ qeaElem.question }}</h4>
 
-<h4>{{ qeaElem.answer }}</h4>
+      <button @click="getAnswer" class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
 
-</div>
+         <i v-if="qeaElem.answerOut" class="fa-solid fa-minus ms-text-l-purple"></i>
+
+         <i v-else class="fa-solid fa-plus ms-text-l-purple"></i>
+
+      </button>
+
+   </div>
+
+   <div v-if="qeaElem.answerOut" class="d-flex justify-content-between align-items-center px-3">
+
+      <p>{{ qeaElem.answer }}</p>
+
+   </div>
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.logo-container {
+   height: 35px;
+   width: 35px;
+
+}
+</style>

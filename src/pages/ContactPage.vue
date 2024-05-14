@@ -203,9 +203,9 @@ export default {
     <section>
 
       <!-- Section Titles -->
-      <div class="text-center">
+      <div class="text-center my-5">
 
-        <h5 class="ms-font-cp ms-text-l-purple">We’re Here to Help</h5>
+        <h5 class="ms-font-cp ms-text-l-purple">We're Here to Help</h5>
 
         <h2 class="ms-font-cp ms-text-d-purple">Frequently Asked Questions</h2>
 
@@ -215,11 +215,13 @@ export default {
       </div>
       <!-- /Section Titles -->
 
-      <div class="text-center">
+      <!-- Q&A Accordion -->
+      <div class="w-75 mx-auto mb-5">
 
         <QeA v-for="element in qeaList" :qeaElem="element"/>
 
       </div>
+      <!-- /Q&A Accordion -->
 
     </section>
     <!-- /FAQ - Section -->

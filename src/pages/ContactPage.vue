@@ -147,19 +147,16 @@ export default {
               <h4>Follow Us</h4>
 
               <!-- Socials -->
-              <ul class="col row row-col-4">
+              <ul class="col row">
 
-                <li v-for="social in socialsMenu" class="col justify-content-end">
+                <li v-for="social in socialsMenu"
+                  class="col-1 logo-container rounded-circle d-flex justify-content-center align-items-center me-2">
 
-                  <div class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
+                  <a href="">
 
-                    <a href="">
+                    <i class="ms-text-d-purple" :class="`${social.iconClasses}`"></i>
 
-                      <i class="ms-text-d-purple" :class="`${social.iconClasses}`"></i>
-
-                    </a>
-
-                  </div>
+                  </a>
 
                 </li>
 
@@ -282,9 +279,9 @@ export default {
 
 
 .logo-container {
-  height: 25px;
-  width: 25px;
-  border-color: $pj-dark-purple;
+  height: 40px;
+  width: 40px;
+  border: 1px solid $pj-light-purple;
 
 }
 </style>

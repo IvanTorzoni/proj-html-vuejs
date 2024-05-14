@@ -19,8 +19,8 @@ export default {
                routeName: "pricing",
             },
             {
-               title: "Career",
-               routeName: "career",
+               title: "Careers",
+               routeName: "careers",
             },
             {
                title: "Contact",
@@ -102,13 +102,14 @@ export default {
 
                <li v-for="item in menu" class="col">
 
-                  <router-link>
+                  <router-link :to="{ name: item.routeName }">
 
-                     {{ item.title }}
-
+                     <span>{{ item.title }}</span>
+                     
                   </router-link>
 
                </li>
+
 
             </ul>
             <!-- /Footer Menu -->

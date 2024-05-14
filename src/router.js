@@ -10,6 +10,7 @@ import ProcessPage from "./pages/ProcessPage.vue";
 import PortfolioPage from "./pages/PortfolioPage.vue";
 import PricingPage from "./pages/PricingPage.vue";
 import BlogPage from "./pages/BlogPage.vue";
+import CareersPage from "./pages/CareersPage.vue";
 
 //Creo la struttura per il router 
 export const router = createRouter({
@@ -49,6 +50,11 @@ export const router = createRouter({
       path : "/blog",
       name : "blog",
       component : BlogPage,
+    },
+    {
+      path : "/careers",
+      name : "careers",
+      component : CareersPage,
     }
   ],
 });

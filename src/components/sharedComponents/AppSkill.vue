@@ -4,29 +4,35 @@ export default {
       return{
          //Array per aggiunta dinamica
          skillTree : [
-            {
+            {  
+               skillImage : "smart1",
                skillTitle : "3D modeling",
                paragraph : "We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we'll drill deep to deliver above and beyond your expectations." 
             },
             {
+               skillImage : "smart3",
                skillTitle : "Collaboration",
                paragraph : "We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we'll drill deep to deliver above and beyond your expectations."
             },
             {
+               skillImage : "smart1",
                skillTitle : "Creativity",
                paragraph : "We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we'll drill deep to deliver above and beyond your expectations."
             },
          ],
          //Array di gradient per aggiunta dinamica
-         bgGradient : ['-webkit-linear-gradient(90deg, rgba(255, 122, 31, 0.10196) 0%, rgba(1, 5, 48, 0) 100%)',
-                    '-webkit-linear-gradient(90deg, rgba(77, 54, 220, 0.10196) 0%, rgba(1, 5, 48, 0) 100%)',
-                    '-webkit-linear-gradient(90deg, rgba(255, 0, 15, 0.10196) 0%, rgba(1, 5, 48, 0) 100%)'
+         bgGradient : ['-webkit-linear-gradient(90deg, rgba(255, 122, 31, 0.20196) 0%, rgba(1, 5, 48, 0) 100%)',
+                    '-webkit-linear-gradient(90deg, rgba(77, 54, 220, 0.20196) 0%, rgba(1, 5, 48, 0) 100%)',
+                    '-webkit-linear-gradient(90deg, rgba(255, 0, 15, 0.20196) 0%, rgba(1, 5, 48, 0) 100%)'
          ]
       };
    },
    methods : {
       getBgGradient(index){
          return this.bgGradient[index];
+      },
+      getImageSkill(imgSkill){
+         return new URL(`../../assets/Img/about-img/${imgSkill}.png`, import.meta.url).href;
       }
    }
 }
@@ -56,7 +62,7 @@ export default {
                <div class="row">
                   <div class="col-lg-4 d-flex g-4" v-for="(card,i) in skillTree" >
                      <div class="ms_card text-center" :style="{ backgroundImage : getBgGradient(i) }">
-                        <img src="../../assets/Img/about-img/smart1.png">
+                        <img :src="getImageSkill(card.skillImage)">
                         <h3>{{ card.skillTitle }}</h3>
                         <p>{{ card.paragraph }}</p>
                      </div>
@@ -113,10 +119,12 @@ export default {
    padding: 35px 15px;
    border: 1px solid lightgray;
    border-radius: 30px;
+   transition: 0.7s;
 }
 
 .ms_card:hover{
-   border: 0;
+   border: 1px solid white;
+   transition: 0.7s;
 }
 
 /* Padding */

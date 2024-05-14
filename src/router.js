@@ -6,6 +6,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "./pages/HomePage.vue";
 import AboutPage from "./pages/AboutPage.vue";
 import ContactPage from "./pages/ContactPage.vue";
+import ProcessPage from "./pages/ProcessPage.vue";
+import PortfolioPage from "./pages/PortfolioPage.vue";
+import PricingPage from "./pages/PricingPage.vue";
+import BlogPage from "./pages/BlogPage.vue";
 
 //Creo la struttura per il router 
 export const router = createRouter({
@@ -26,5 +30,25 @@ export const router = createRouter({
       name: "contact",
       component: ContactPage,
     },
+    {
+      path : "/portfolio",
+      name : "portfolio",
+      component : PortfolioPage,
+    },
+    {
+      path : "/process",
+      name : "process",
+      component : ProcessPage,
+    },
+    {
+      path : "/pricing",
+      name : "pricing",
+      component : PricingPage,
+    },
+    {
+      path : "/blog",
+      name : "blog",
+      component : BlogPage,
+    }
   ],
 });

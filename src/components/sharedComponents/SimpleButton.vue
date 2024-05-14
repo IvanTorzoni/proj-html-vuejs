@@ -5,6 +5,8 @@ export default {
 
       bgColor: String,
       color: String,
+      type: String,
+      text: String,
 
    }
 
@@ -14,7 +16,7 @@ export default {
 
 <template>
 
-   <button class="ms-btn btn rounded-pill ms-2" :class="bgColor, color">Submit</button>
+   <button :type="type" class="ms-btn btn rounded-pill ms-2" :class="bgColor, color"> {{ text }}</button>
 
 </template>
 

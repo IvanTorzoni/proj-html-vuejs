@@ -69,6 +69,7 @@ export default {
 <style scoped lang="scss">
 header{
     min-height: 70px;
+    z-index: 99999;
     color : white;
     font-size: 1rem;
     max-width: 100%;

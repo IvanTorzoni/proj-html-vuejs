@@ -77,7 +77,6 @@ export default {
 <style lang="scss" scoped>
 .hero-section {
    background: url(../assets/Img/main-img/banner-bg.png) no-repeat bottom center;
-   z-index: -2;
    background-size: cover;
    position: relative;
    padding: 170px 0 0;
@@ -116,7 +115,7 @@ export default {
 
    .globe3 {
       position: absolute;
-      z-index: -1;
+      z-index: 1;
       top: -10%;
       left: 33%;
       max-width: 300px;

@@ -21,8 +21,6 @@ export default {
 
 <template>
 
-    <h2>Video</h2>
-
     <AppSkill />
 
     <AppFacts />

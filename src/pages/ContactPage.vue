@@ -36,6 +36,27 @@ export default {
 
       ],
 
+      // Social Networks list
+      socialsMenu: [
+        {
+          name: "facebook",
+          iconClasses: "fa-brands fa-facebook-f",
+        },
+        {
+          name: "instagram",
+          iconClasses: "fa-brands fa-instagram",
+        },
+        {
+          name: "twitter",
+          iconClasses: "fa-brands fa-twitter",
+        },
+        {
+          name: "whatsapp",
+          iconClasses: "fa-brands fa-whatsapp",
+        },
+
+      ],
+
       qeaList: [
 
         {
@@ -92,7 +113,7 @@ export default {
       <div class="container-sm d-flex flex-column justify-content-center align-items-center">
 
         <!-- Section Titles -->
-        <div class="text-center">
+        <div class="text-center my-5">
 
           <h5 class="ms-font-cp ms-text-l-purple">Contact Us</h5>
 
@@ -106,16 +127,16 @@ export default {
         <!-- /Section Titles -->
 
         <!-- Info&ContactForm -->
-        <div class="row ms-bg-pink d-flex justify-content-between align-items-center p-5">
+        <div class="row ms-bg-l-purple d-flex justify-content-between align-items-center p-5  mb-5">
 
           <!-- Infos -->
           <div class="col-5">
 
-            <h3 class="ms-font-cp ms-text-l-purple">Reach us directly!</h3>
+            <h3 class="ms-font-cp ms-text-d-purple mb-4">Reach us directly!</h3>
 
             <div class="row g-2">
 
-              <InfoCard class="col-12" v-for="card in infoCardList" :cardElem="card" />
+              <InfoCard class="col-12 p-2" v-for="card in infoCardList" :cardElem="card" />
 
             </div>
 
@@ -125,6 +146,26 @@ export default {
 
               <h4>Follow Us</h4>
 
+              <!-- Socials -->
+              <ul class="col row row-col-4">
+
+                <li v-for="social in socialsMenu" class="col justify-content-end">
+
+                  <div class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
+
+                    <a href="">
+
+                      <i class="ms-text-d-purple" :class="`${social.iconClasses}`"></i>
+
+                    </a>
+
+                  </div>
+
+                </li>
+
+              </ul>
+              <!-- /Socials -->
+
 
             </div>
 
@@ -132,7 +173,7 @@ export default {
           <!-- Infos -->
 
           <!-- ContactForm -->
-          <div class="col-6 border border-4 rounded-4 p-3 ms-font-cp ms-text-d-purple">
+          <div class="col-6 border border-4 rounded-4 p-3 ms-font-cp ms-text-d-purple ms-bg-l-pink">
 
             <!-- Sub-Section Titles -->
             <div class="text-center">
@@ -144,7 +185,7 @@ export default {
             </div>
             <!-- /Sub-Section Titles -->
 
-            <form>
+            <form class="p-2">
 
               <div class="mb-3">
 
@@ -180,7 +221,13 @@ export default {
 
               </div>
 
-              <SimpleButton type="submit" text="Submit" bgColor="ms-bg-pink" color="ms-text-d-purple" />
+              <div>
+
+                <SimpleButton class="w-100" type="submit" text="Request a quote" bgColor="ms-bg-pink"
+                  color="ms-text-d-purple" />
+
+              </div>
+
 
             </form>
 
@@ -218,7 +265,7 @@ export default {
       <!-- Q&A Accordion -->
       <div class="w-75 mx-auto mb-5">
 
-        <QeA v-for="element in qeaList" :qeaElem="element"/>
+        <QeA v-for="element in qeaList" :qeaElem="element" />
 
       </div>
       <!-- /Q&A Accordion -->
@@ -229,3 +276,15 @@ export default {
   </div>
 
 </template>
+
+<style lang="scss" scoped>
+@use "../style/partials/variables" as *;
+
+
+.logo-container {
+  height: 25px;
+  width: 25px;
+  border-color: $pj-dark-purple;
+
+}
+</style>

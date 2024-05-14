@@ -80,4 +80,14 @@ export default {
 
 }
 
+.ms-bg-l-pink {
+  background-color: $pj-light-pink;
+
+}
+
+.ms-bg-l-purple {
+  background-color: $pj-lighter-purple;
+
+}
+
 </style>

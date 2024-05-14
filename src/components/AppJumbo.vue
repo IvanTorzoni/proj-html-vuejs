@@ -26,8 +26,7 @@ export default {
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-xxl-9">
-               <div class="hero-content wow fadeInUp" data-wow-delay="0.2s"
-                  style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+               <div class="hero-content wow fadeInUp">
                   <h5 class="ms-text-orange">
                      Imagine, Create, Experience
                   </h5>

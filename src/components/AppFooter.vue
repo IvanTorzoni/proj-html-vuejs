@@ -84,7 +84,7 @@ export default {
    <!-- Footer -->
    <footer class="py-3">
 
-      <div class="container-sm">
+      <div class="container">
 
          <!-- Footer Menu - Section -->
          <section class="row justify-content-between align-items-center">
@@ -105,7 +105,7 @@ export default {
                   <router-link :to="{ name: item.routeName }">
 
                      <span>{{ item.title }}</span>
-                     
+
                   </router-link>
 
                </li>

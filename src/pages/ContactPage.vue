@@ -1,6 +1,7 @@
 <script>
 import SimpleButton from '../components/sharedComponents/SimpleButton.vue';
 import InfoCard from '../components/sharedComponents/InfoCard.vue';
+import QeA from '../components/sharedComponents/QeA.vue';
 
 export default {
 
@@ -8,6 +9,7 @@ export default {
 
     SimpleButton,
     InfoCard,
+    QeA,
 
   },
 
@@ -32,7 +34,48 @@ export default {
           info: "(406) 555-0120",
         },
 
+      ],
+
+      qeaList: [
+
+        {
+          question: "How do I know what kind of video I need?",
+          answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
+          answerOut: false,
+        },
+        {
+          question: "Do you currently have career openings?",
+          answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
+          answerOut: false,
+        },
+        {
+          question: "How long will it take to create an animation video?",
+          answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
+          answerOut: false,
+        },
+        {
+          question: "How long do you need for the video creation process?",
+          answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
+          answerOut: false,
+        },
+        {
+          question: "Will I take part in the creation process?",
+          answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
+          answerOut: false,
+        },
+        {
+          question: "What type / format of animated video can I order?",
+          answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
+          answerOut: false,
+        },
+        {
+          question: "What if I don’t like what you deliver?",
+          answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
+          answerOut: false,
+        },
+
       ]
+
     }
   }
 
@@ -48,13 +91,19 @@ export default {
 
       <div class="container-sm d-flex flex-column justify-content-center align-items-center">
 
-        <h5 class="ms-font-cp ms-text-l-purple">Contact Us</h5>
+        <!-- Section Titles -->
+        <div class="text-center">
 
-        <h2 class="ms-font-cp ms-text-d-purple text-center">How to Reach Us</h2>
+          <h5 class="ms-font-cp ms-text-l-purple">Contact Us</h5>
 
-        <p class="font-b ms-text-d-purple text-center">We're always interested in having a chat or discussing your next
-          big project,
-          so drop us a line!</p>
+          <h2 class="ms-font-cp ms-text-d-purple">How to Reach Us</h2>
+
+          <p class="font-b ms-text-d-purple">We're always interested in having a chat or discussing your next
+            big project,
+            so drop us a line!</p>
+
+        </div>
+        <!-- /Section Titles -->
 
         <!-- Info&ContactForm -->
         <div class="row ms-bg-pink d-flex justify-content-between align-items-center p-5">
@@ -85,9 +134,15 @@ export default {
           <!-- ContactForm -->
           <div class="col-6 border border-4 rounded-4 p-3 ms-font-cp ms-text-d-purple">
 
-            <h2 class="text-center">Contact Form</h2>
+            <!-- Sub-Section Titles -->
+            <div class="text-center">
 
-            <p class="text-center">Tell us your story and let's make it awesome</p>
+              <h2>Contact Form</h2>
+
+              <p>Tell us your story and let's make it awesome</p>
+
+            </div>
+            <!-- /Sub-Section Titles -->
 
             <form>
 
@@ -95,7 +150,8 @@ export default {
 
                 <label for="user-name" class="form-label">NAME</label>
 
-                <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp" placeholder="What's your name?">
+                <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp"
+                  placeholder="What's your name?">
 
               </div>
 
@@ -119,7 +175,8 @@ export default {
 
                 <label for="user-text" class="form-label">LEAVE A MESSAGE</label>
 
-                <textarea class="form-control" id="user-text" rows="3" placeholder="Please, type your message here..."></textarea>
+                <textarea class="form-control" id="user-text" rows="3"
+                  placeholder="Please, type your message here..."></textarea>
 
               </div>
 
@@ -142,7 +199,30 @@ export default {
 
   <div class="container-sm">
 
-    <h2>FAQ</h2>
+    <!-- FAQ - Section -->
+    <section>
+
+      <!-- Section Titles -->
+      <div class="text-center">
+
+        <h5 class="ms-font-cp ms-text-l-purple">We’re Here to Help</h5>
+
+        <h2 class="ms-font-cp ms-text-d-purple">Frequently Asked Questions</h2>
+
+        <p class="font-b ms-text-d-purple">We're always interested in having a chat or discussing your next
+          big project, so drop us a line!</p>
+
+      </div>
+      <!-- /Section Titles -->
+
+      <div class="text-center">
+
+        <QeA v-for="element in qeaList" :qeaElem="element"/>
+
+      </div>
+
+    </section>
+    <!-- /FAQ - Section -->
 
   </div>
 

@@ -8,7 +8,7 @@ export default {
       type: String,
       text: String,
 
-   }
+   },
 
 }
 
@@ -21,6 +21,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
 .ms-btn {
    padding: 12px 38px 12px;
    display: inline-block;
@@ -37,4 +38,5 @@ export default {
    }
 
 }
+
 </style>

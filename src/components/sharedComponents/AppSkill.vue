@@ -79,7 +79,7 @@ export default {
 
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 /* Skill-section */
 .skill-section{
    position: relative;

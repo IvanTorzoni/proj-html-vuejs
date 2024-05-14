@@ -71,6 +71,8 @@ header{
     min-height: 70px;
     color : white;
     font-size: 1rem;
+    max-width: 100%;
+    position: fixed;
     img{
         max-width: 125px;
     }

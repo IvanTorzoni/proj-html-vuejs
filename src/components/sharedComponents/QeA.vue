@@ -28,7 +28,7 @@ export default {
 
    </div>
 
-   <div class="d-flex justify-content-between align-items-center border rounded-2 my-2 p-2 px-3">
+   <div class="d-flex bg-white justify-content-between align-items-center border rounded-2 my-2 p-2 px-3">
 
       <h4 class="m-0">{{ qeaElem.question }}</h4>
 

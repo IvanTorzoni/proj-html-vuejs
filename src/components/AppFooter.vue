@@ -184,6 +184,8 @@ export default {
 
       img {
          display: block;
+      color: rgba(1,1,1,0);
+
       }
    }
 

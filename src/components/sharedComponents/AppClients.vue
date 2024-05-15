@@ -14,7 +14,7 @@ export default {
      },
      // Calcola lunghezza, 
      trackWidth() {
-       return `${this.duplicatedSponsorImages.length * 225}px`;
+       return `${this.duplicatedSponsorImages.length * 250}px`;
      }
    },
    methods: {
@@ -62,5 +62,6 @@ export default {
  .slide {
    height: auto;
    width: 250px;
+   transition: 0.7s;
  }
  </style>

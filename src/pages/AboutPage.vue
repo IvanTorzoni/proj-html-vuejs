@@ -5,6 +5,7 @@ import AppSkill from '../components/sharedComponents/AppSkill.vue';
 import AppTeam from '../components/sharedComponents/AppTeam.vue';
 import AppClients from '../components/sharedComponents/AppClients.vue';
 import ServiceCard from '../components/sharedComponents/ServiceCard.vue';
+import SimpleJumbo from '../components/sharedComponents/SimpleJumbo.vue';
 
 export default {
 
@@ -14,8 +15,8 @@ export default {
     AppSkill,
     AppTeam,
     AppClients,
-    ServiceCard
-
+    ServiceCard,
+    SimpleJumbo
   },
   data(){
     return{
@@ -50,7 +51,13 @@ export default {
           serviceTitle : "Script Writing",
           serviceP : "The best in the business, served to your audience's eyeballs",
         }
-      ]
+      ],
+
+      page : {
+        pageName : "About Us",
+        pageImg : "../../assets/Img/about-img/rocket-banner.png",
+        pageBg : "../../assets/Img/main-img/banner-bg.png"
+      }
     }
   }
 
@@ -58,6 +65,8 @@ export default {
 </script>
 
 <template>
+
+  <SimpleJumbo :pageObj="page" />
 
   <AppSkill />
 

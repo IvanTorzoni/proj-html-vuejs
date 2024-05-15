@@ -5,7 +5,13 @@ export default {
 
       pageObj: Object,
 
-   }
+   },
+   methods: {
+     //Gestione immagine dinamica
+     getImagePath(bgImg) {
+       return new URL(bgImg, import.meta.url).href;
+     },
+   },
 
 }
 
@@ -13,7 +19,7 @@ export default {
 
 <template>
 
-   <section class="hero-section" :style="`background: url(${pageObj.pageBg}) no-repeat bottom center`">
+   <section class="hero-section" :style="`background: url(${getImagePath(pageObj.pageBg)}) no-repeat bottom center`">
 
       <div class="container">
 
@@ -28,7 +34,7 @@ export default {
       </div>
 
       <div class="img-right" v-if="pageObj.pageImg">
-         <img :src="pageObj.pageImg" alt="left-man">
+         <img :src="getImagePath(pageObj.pageImg)" alt="left-man">
       </div>
 
       <div class="globe1">

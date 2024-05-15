@@ -3,6 +3,7 @@ import AppFacts from '../components/sharedComponents/AppFacts.vue';
 import AppSkill from '../components/sharedComponents/AppSkill.vue';
 import AppTeam from '../components/sharedComponents/AppTeam.vue';
 import AppClients from '../components/sharedComponents/AppClients.vue';
+import AppJumbo from '../components/AppJumbo.vue';
 
 export default {
 
@@ -12,7 +13,7 @@ export default {
         AppSkill,
         AppTeam,
         AppClients,
-
+        AppJumbo
     }
 
 }
@@ -20,6 +21,8 @@ export default {
 </script>
 
 <template>
+
+    <AppJumbo />
 
     <AppSkill />
 

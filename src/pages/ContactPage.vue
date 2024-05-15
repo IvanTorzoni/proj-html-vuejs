@@ -1,4 +1,5 @@
 <script>
+import SimpleJumbo from '../components/sharedComponents/SimpleJumbo.vue';
 import SimpleButton from '../components/sharedComponents/SimpleButton.vue';
 import InfoCard from '../components/sharedComponents/InfoCard.vue';
 import QeA from '../components/sharedComponents/QeA.vue';
@@ -7,6 +8,7 @@ export default {
 
   components: {
 
+    SimpleJumbo,
     SimpleButton,
     InfoCard,
     QeA,
@@ -95,7 +97,15 @@ export default {
           answerOut: false,
         },
 
-      ]
+      ],
+
+      page: {
+
+        pageName: "Contact",
+        pageImg: null,
+        pageBg: "../../assets/Img/contact-img/banner-contact.png",
+
+      }
 
     }
   }
@@ -104,6 +114,8 @@ export default {
 </script>
 
 <template>
+
+  <SimpleJumbo :pageObj="page"/>
 
   <!-- Contact Us - Section -->
   <div class="container-lg">

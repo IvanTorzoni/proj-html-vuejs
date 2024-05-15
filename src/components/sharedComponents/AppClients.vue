@@ -36,7 +36,7 @@ export default {
    </div>
  </template>
  
- <style scoped>
+ <style>
  /* Animation */
  @keyframes scroll {
    0% { transform: translateX(0); }

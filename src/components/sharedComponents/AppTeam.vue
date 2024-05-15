@@ -23,8 +23,20 @@ export default {
                memberName : "Hector Vargas",
                memberRole : "Project Lead & Senior Animator",
             }
-         ]
+         ],
+         clonedTeam : [],
       };
+   },
+   mounted(){
+      this.clonedTeam = [...this.teamInfo];
+   },
+   computed : {
+      multiplyTeam(){
+         return [...this.teamInfo,...this.clonedTeam];
+      },
+      teamWidth(){
+         return `${this.multiplyTeam.length * 300}px`;
+      }
    },
    methods: {
      //Gestione immagine dinamica
@@ -54,9 +66,9 @@ export default {
       <!-- /Titoli-->
 
       <!--Slider Membri del team -->
-      <div class="team-slider">
-         <div class="team-slide-track d-flex gap-4 justify-content-between align-items-center h-100 p-5" :style="{ width: trackWidth }">
-            <div class="member-slide col-4 text-center p-2" v-for="item in teamInfo">
+      <div class="team-slider text-center">
+         <div class="team-slide-track d-flex gap-4 justify-content-between align-items-center h-100 p-5">
+            <div class="member-slide col-4 text-center p-2" v-for="item in multiplyTeam">
                <img :src="getMemberPic(item.memberPic)" class="member-img" />
                <h5 class="pt-1 pb-1">{{ item.memberName }}</h5>
                <p>{{ item.memberRole }}</p>
@@ -111,8 +123,8 @@ export default {
    width: 100%;
 }
 .team-slide-track{
-   overflow-x : clip;
    min-height: 400px;
+   animation: teamScroll 10s linear infinite;
 }
 .member-slide{
    background-color: #fff5f0;
@@ -147,4 +159,14 @@ export default {
    transform: translateY(-20px);
    transition: 0.7s;
 }
+/* Animazione Team */
+@keyframes teamScroll{
+   0% {transform: translateX(0);}
+   20% {transform : translate(-25%);}
+   40% {transform : translate(-50%);}
+   60% {transform : translateX(-75%);}
+   80% {transform : translateX(-100%);}
+   100%{transform: translateX(0);}
+}
+
 </style>

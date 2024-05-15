@@ -18,7 +18,8 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-
+   scrollbar-width: thin;
+   scrollbar-color: #751bd3 #ffffff;
 }
 
 img {
@@ -53,4 +54,19 @@ button {
    cursor: pointer;
    outline: inherit;
 
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+   width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+   background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+   background-color: #751bd3;
+   border-radius: 20px;
+   border: 3px none #ffffff;
 }

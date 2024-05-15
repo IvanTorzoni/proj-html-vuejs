@@ -6,16 +6,29 @@ import AppClients from '../components/sharedComponents/AppClients.vue';
 import AppJumbo from '../components/AppJumbo.vue';
 
 export default {
-
     components: {
-
         AppFacts,
         AppSkill,
         AppTeam,
         AppClients,
         AppJumbo
-    }
-
+    },
+    data() {
+        return {
+            workImg: [
+                'work1',
+                'work2',
+                'work3',
+                'work4',
+            ]
+        }
+    },
+    methods: {
+     //Gestione immagine dinamica
+     getImageWork(workImg) {
+       return new URL(`../assets/Img/main-img/${workImg}.png`, import.meta.url).href;
+     },
+   },
 }
 
 </script>
@@ -47,43 +60,9 @@ export default {
                     </p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                        <div class="work-thumb">
-                            <img src="../assets/Img/main-img/work1.png" alt="work-img">
-                            <div class="video-overlay">
-                                <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn">
-                                    <i class="fas fa-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.4s"
-                        style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                        <div class="work-thumb">
-                            <img src="../assets/Img/main-img/work2.png" alt="work-img">
-                            <div class="video-overlay">
-                                <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn">
-                                    <i class="fas fa-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.6s"
-                        style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                        <div class="work-thumb">
-                            <img src="../assets/Img/main-img/work3.png" alt="work-img">
-                            <div class="video-overlay">
-                                <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn">
-                                    <i class="fas fa-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.8s"
-                        style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
-                        <div class="work-thumb">
-                            <img src="../assets/Img/main-img/work4.png" alt="work-img">
+                    <div class="col-lg-6 col-md-6 wow fadeInUp" v-for="image in workImg">
+                        <div class="work-thumb" >
+                            <img :src="getImageWork(image)" alt="work-img">
                             <div class="video-overlay">
                                 <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn">
                                     <i class="fas fa-play"></i>
@@ -161,6 +140,44 @@ export default {
                                             </div>
                                             <span class="badge">
                                                 2
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item hide">
+                                        <div class="process-items">
+                                            <div class="thumb">
+                                                <img src="../assets/Img/main-img/process1.png" alt="process-img">
+                                            </div>
+                                            <div class="process-content">
+                                                <h4>
+                                                    <a href="#0">Scripting</a>
+                                                </h4>
+                                                <p>
+                                                    We’ll take your idea and create a technical script which consists of
+                                                    action notes and animation descriptions
+                                                </p>
+                                            </div>
+                                            <span class="badge">
+                                                3
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item hide">
+                                        <div class="process-items">
+                                            <div class="thumb">
+                                                <img src="../assets/Img/main-img/process2.png" alt="process-img">
+                                            </div>
+                                            <div class="process-content">
+                                                <h4>
+                                                    <a href="#0">Pre- Production</a>
+                                                </h4>
+                                                <p>
+                                                    We’ll take your idea and create a technical script which consists of
+                                                    action notes and animation descriptions
+                                                </p>
+                                            </div>
+                                            <span class="badge">
+                                                4
                                             </span>
                                         </div>
                                     </div>
@@ -334,8 +351,12 @@ export default {
 
         .owl-stage {
             display: flex;
+
+            .hide {
+                display: none;
+            }
         }
-        
+
         .process-items {
             border-radius: 20px;
             padding: 20px 20px;
@@ -344,7 +365,7 @@ export default {
             text-align: center;
             position: relative;
             width: 95%;
-    
+
             .thumb {
                 width: 140px;
                 height: 140px;
@@ -356,7 +377,7 @@ export default {
                 justify-content: center;
                 transition: all 2s;
             }
-    
+
             .badge {
                 background: #f7f0ff;
                 color: #8d829c;
@@ -374,10 +395,10 @@ export default {
                 top: 0;
                 right: 20px;
             }
-    
+
             .process-content {
                 padding: 30px 0 0;
-    
+
                 h4 {
                     font-weight: 600;
                     margin-bottom: 5px;
@@ -386,14 +407,14 @@ export default {
                     margin-top: -15px;
                     font-family: "Chakra Petch", sans-serif;
                 }
-    
+
                 p {
                     font-size: 18px;
                     line-height: 30px;
                     margin-bottom: 0;
                     font-family: "Barlow", sans-serif;
                 }
-    
+
             }
         }
     }

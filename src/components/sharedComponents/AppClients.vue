@@ -27,6 +27,13 @@ export default {
 </script>
 
 <template>
+   <div class="container pt-3">
+      <div class="text-center">
+         <h5 class="ms-text-l-purple pb-2">Why Anidio studio?</h5>
+         <h1 class="pb-2">We Love Our Clients </h1>
+         <p class="pb-2">We are trusted throughout adland and have a wealth of recommendations from start-ups to renowned global brands.</p>
+      </div>
+   </div>
    <div class="sponsor-slider pb-2">
      <div class="slide-track" :style="{ width: trackWidth }">
        <div class="slide" v-for="image in duplicatedSponsorImages">
@@ -56,7 +63,7 @@ export default {
  .slide-track {
    display: flex;
    gap: 5px;
-   animation: scroll 30s linear infinite;
+   animation: scroll 40s linear infinite;
  }
  
  .slide {

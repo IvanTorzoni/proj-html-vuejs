@@ -180,6 +180,20 @@ export default {
             box-shadow: 0px 8px 18px 0px rgba(109, 100, 139, 0.61);
          }
 
+         .cmn--btn:hover {
+            margin: 10px 25px 10px 0;
+            border-radius: 100px;
+            padding: 12px 38px 12px;
+            font-size: 18px;
+            font-weight: 600;
+            display: inline-block;
+            color: white;
+            background-color: #270264;
+            transition: all 0.5s;
+            position: relative;
+            box-shadow: 0px 8px 18px 0px rgba(109, 100, 139, 0.61);
+         }
+
          a {
             text-decoration: none;
             margin: 0;
@@ -229,8 +243,8 @@ export default {
       right: 9%;
       top: 10%;
       z-index: 1;
-      animation-delay: 0.3s;
       animation: lightopen 2s linear infinite;
+      animation-delay: 0.3s;
    }
 
    .dots-right {

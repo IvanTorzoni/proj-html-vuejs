@@ -19,7 +19,7 @@ export default {
 
 <template>
 
-   <section class="hero-section" :style="`background: url(${getImagePath(pageObj.pageBg)}) no-repeat bottom center`">
+   <section class="hero-section" :style="`background: url(${getImagePath(pageObj.pageBg)}) bottom center`">
 
       <div class="container">
 

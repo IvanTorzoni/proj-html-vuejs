@@ -15,20 +15,67 @@ export default {
     },
     data() {
         return {
+            workIdx: 0,
+
             workImg: [
                 'work1',
                 'work2',
                 'work3',
                 'work4',
+            ],
+            process: [
+                {
+                    image: '../assets/Img/main-img/process1.png',
+                    title: 'Scripting',
+                    text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
+                    badge: '1'
+                },
+                {
+                    image: '../assets/Img/main-img/process2.png',
+                    title: 'Pre-Production',
+                    text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
+                    badge: '2'
+                },
+                {
+                    image: '../assets/Img/main-img/process1.png',
+                    title: 'Scripting',
+                    text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
+                    badge: '3'
+                },
+                {
+                    image: '../assets/Img/main-img/process2.png',
+                    title: 'Pre-Production',
+                    text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
+                    badge: '4'
+                },
             ]
         }
     },
     methods: {
-     //Gestione immagine dinamica
-     getImageWork(workImg) {
-       return new URL(`../assets/Img/main-img/${workImg}.png`, import.meta.url).href;
-     },
-   },
+        getImageWork(workImg) {
+            return new URL(`../assets/Img/main-img/${workImg}.png`, import.meta.url).href;
+        },
+
+        getImageProcess(process) {
+            return new URL(`../assets/Img/main-img/${process.image}.png`, import.meta.url).href;
+        },
+
+        showNext: function () {
+            if (this.workIdx === this.process.length - 1) {
+                this.workIdx = 0;
+            } else {
+                this.workIdx++;
+            }
+        },
+
+        showPrevious: function () {
+            if (this.workIdx === 0) {
+                this.workIdx = this.process.length - 1;
+            } else {
+                this.workIdx--;
+            }
+        }
+    }
 }
 
 </script>
@@ -61,7 +108,7 @@ export default {
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-6 col-md-6 wow fadeInUp" v-for="image in workImg">
-                        <div class="work-thumb" >
+                        <div class="work-thumb">
                             <img :src="getImageWork(image)" alt="work-img">
                             <div class="video-overlay">
                                 <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn">
@@ -108,85 +155,27 @@ export default {
                                     <div class="owl-item">
                                         <div class="process-items">
                                             <div class="thumb">
-                                                <img src="../assets/Img/main-img/process1.png" alt="process-img">
+                                                <img src="../assets/Img/main-img/process1.png" alt="">
                                             </div>
                                             <div class="process-content">
                                                 <h4>
-                                                    <a href="#0">Scripting</a>
+                                                    <a href="#0">{{ process[workIdx].title }}</a>
                                                 </h4>
                                                 <p>
-                                                    We’ll take your idea and create a technical script which consists of
-                                                    action notes and animation descriptions
+                                                    {{ process[workIdx].text }}
                                                 </p>
                                             </div>
                                             <span class="badge">
-                                                1
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item">
-                                        <div class="process-items">
-                                            <div class="thumb">
-                                                <img src="../assets/Img/main-img/process2.png" alt="process-img">
-                                            </div>
-                                            <div class="process-content">
-                                                <h4>
-                                                    <a href="#0">Pre- Production</a>
-                                                </h4>
-                                                <p>
-                                                    We’ll take your idea and create a technical script which consists of
-                                                    action notes and animation descriptions
-                                                </p>
-                                            </div>
-                                            <span class="badge">
-                                                2
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item hide">
-                                        <div class="process-items">
-                                            <div class="thumb">
-                                                <img src="../assets/Img/main-img/process1.png" alt="process-img">
-                                            </div>
-                                            <div class="process-content">
-                                                <h4>
-                                                    <a href="#0">Scripting</a>
-                                                </h4>
-                                                <p>
-                                                    We’ll take your idea and create a technical script which consists of
-                                                    action notes and animation descriptions
-                                                </p>
-                                            </div>
-                                            <span class="badge">
-                                                3
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item hide">
-                                        <div class="process-items">
-                                            <div class="thumb">
-                                                <img src="../assets/Img/main-img/process2.png" alt="process-img">
-                                            </div>
-                                            <div class="process-content">
-                                                <h4>
-                                                    <a href="#0">Pre- Production</a>
-                                                </h4>
-                                                <p>
-                                                    We’ll take your idea and create a technical script which consists of
-                                                    action notes and animation descriptions
-                                                </p>
-                                            </div>
-                                            <span class="badge">
-                                                4
+                                                {{ process[workIdx].badge }}
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="owl-nav">
-                                <button type="button" role="presentation" class="owl-prev"><i
+                                <button type="button" role="presentation" class="owl-prev" @click="showPrevious"><i
                                         class="fas fa-arrow-left"></i></button>
-                                <button type="button" role="presentation" class="owl-next"><i
+                                <button type="button" role="presentation" class="owl-next" @click="showNext"><i
                                         class="fas fa-arrow-right"></i></button>
                             </div>
                         </div>

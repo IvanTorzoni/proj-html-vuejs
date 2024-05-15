@@ -1,77 +1,66 @@
+ 
 <script>
 export default {
-  data() {
-    return {
-      sponsorImages: ['sponsor1',
-               'sponsor2',
-               'sponsor3',
-               'sponsor4',
-               'sponsor5',
-               'sponsor6',
-               'sponsor5',
-               'sponsor4',
-               'sponsor3',
-               'sponsor2',
-               'sponsor1',
-            ],
-      curIndex: 0,
-      transformVal: 0,
-    };
-  },
-  mounted() {
-    setInterval(this.nextSponsor, 2000); // Cambia slide ogni 3 secondi
-  },
-  methods: {
-   nextSponsor() {
-    //incremento indice
-    this.curIndex += 1;
-
-   // Sposta l'immagine corrente verso sinistra (175 è la grandezza della card sponsor + 10 di gap)
-   this.transformVal -= 185;
-
-   // Verifica se siamo a metà
-   if (this.curIndex >= this.sponsorImages.length / 2) {
-         this.transformVal = 0;
-         this.curIndex = 0; // Riporta l'indice alla prima immagine
-      }
-  },
-   getImageSponsor(sponsorImg){
-      return new URL(`../../assets/Img/about-img/${sponsorImg}.png`, import.meta.url).href;
+   data() {
+     return {
+      //Array di immagini
+      sponsorImages: ['sponsor1', 'sponsor2', 'sponsor3', 'sponsor4', 'sponsor5', 'sponsor6', 'sponsor5', 'sponsor4', 'sponsor3', 'sponsor2'],
+     };
    },
-  },
+   computed: {
+     // Duplico le immagini
+     duplicatedSponsorImages() {
+       return [...this.sponsorImages, ...this.sponsorImages, ...this.sponsorImages, ...this.sponsorImages];
+     },
+     // Calcola lunghezza, 
+     trackWidth() {
+       return `${this.duplicatedSponsorImages.length * 225}px`;
+     }
+   },
+   methods: {
+     //Gestione immagine dinamica
+     getImageSponsor(sponsorImg) {
+       return new URL(`../../assets/Img/about-img/${sponsorImg}.png`, import.meta.url).href;
+     },
+   },
 };
 </script>
 
 <template>
-<div class="container">
-   <div class="sponsor-carousel">
-     <div class="car-inner" :style="{ transform: `translate3d(${transformVal}px, 0px, 0px)` }">
-       <img v-for="image in sponsorImages" :src="getImageSponsor(image)" class="car-img">
+   <div class="sponsor-slider pb-2">
+     <div class="slide-track" :style="{ width: trackWidth }">
+       <div class="slide" v-for="image in duplicatedSponsorImages">
+         <img :src="getImageSponsor(image)"  alt="" />
+       </div>
      </div>
    </div>
-</div>
  </template>
  
+ <style scoped>
+ /* Animation */
+ @keyframes scroll {
+   0% { transform: translateX(0); }
+   100% { transform: translateX(calc(-250px * 14)); }
+ }
  
-<style lang="scss" scoped>
-/* outer-Carosello, con altezza minima e larghezza del container(80% pag) */
-.sponsor-carousel {
-   width: 100%;
+ /* Styling */
+ .sponsor-slider {
+   background: white;
    height: 100px;
+   margin: auto;
    overflow: hidden;
    position: relative;
-   transform: translate3d(0, 0, 0);
-   .car-inner {
-      position: absolute;
-      left: 0;
-      display: flex;
-      gap: 10px;
-      transition: transform 0.6s ease;
-         .car-img {
-            width: 175px;
-            height: auto;
-         }
-      }
-}
- </style>
+   width: 80%;
+ }
  
+ .slide-track {
+   display: flex;
+   gap: 5px;
+   animation: scroll 30s linear infinite;
+ }
+ 
+ .slide {
+   height: auto;
+   width: 250px;
+ }
+ </style>

@@ -25,25 +25,25 @@ export default {
             ],
             process: [
                 {
-                    image: '../assets/Img/main-img/process1.png',
+                    image: 'process1',
                     title: 'Scripting',
                     text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
                     badge: '1'
                 },
                 {
-                    image: '../assets/Img/main-img/process2.png',
+                    image: 'process2',
                     title: 'Pre-Production',
                     text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
                     badge: '2'
                 },
                 {
-                    image: '../assets/Img/main-img/process1.png',
+                    image: 'process1',
                     title: 'Scripting',
                     text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
                     badge: '3'
                 },
                 {
-                    image: '../assets/Img/main-img/process2.png',
+                    image: 'process2',
                     title: 'Pre-Production',
                     text: 'We’ll take your idea and create a technical script which consists of action notes and animation descriptions',
                     badge: '4'
@@ -57,7 +57,7 @@ export default {
         },
 
         getImageProcess(process) {
-            return new URL(`../assets/Img/main-img/${process.image}.png`, import.meta.url).href;
+            return new URL(`../assets/Img/main-img/${process}.png`, import.meta.url).href;
         },
 
         showNext: function () {
@@ -155,7 +155,7 @@ export default {
                                     <div class="owl-item">
                                         <div class="process-items">
                                             <div class="thumb">
-                                                <img src="../assets/Img/main-img/process1.png" alt="">
+                                                <img :src="getImageProcess(process[workIdx].image)" alt="">
                                             </div>
                                             <div class="process-content">
                                                 <h4>

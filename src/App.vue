@@ -1,6 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppArrow from './components/AppArrow.vue';
 
 
 export default {
@@ -9,7 +10,7 @@ export default {
 
     AppHeader,
     AppFooter,
-
+    AppArrow
   }
 
 }
@@ -23,7 +24,7 @@ export default {
   <router-view></router-view>
 
   <AppFooter />
-
+  <AppArrow />
 </template>
 
 <style lang="scss">

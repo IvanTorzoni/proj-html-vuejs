@@ -51,7 +51,7 @@ export default {
             //calcolo percentuale
             this.scrolPerc = (scrollYaxis / windowHeight) * 100;
         }
-  }
+    }
 };
 
 </script>

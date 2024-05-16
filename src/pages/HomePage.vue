@@ -111,7 +111,7 @@ export default {
                         <div class="work-thumb">
                             <img :src="getImageWork(image)" alt="work-img">
                             <div class="video-overlay">
-                                <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn">
+                                <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn"  target="_blank">
                                     <i class="fas fa-play"></i>
                                 </a>
                             </div>

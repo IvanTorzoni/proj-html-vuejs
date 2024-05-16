@@ -50,7 +50,7 @@ export default {
                </div>
                <div class="hero-thumb">
                   <img src="../assets/Img/main-img/middle.png" alt="hero-img">
-                  <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn">
+                  <a href="https://www.youtube.com/watch?v=sNub3X8fHew" class="video-btn" target="_blank">
                      <i class="fas fa-play"></i>
                   </a>
                </div>

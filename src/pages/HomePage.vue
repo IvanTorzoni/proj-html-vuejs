@@ -100,7 +100,7 @@ export default {
                     <h2 class="section-title">
                         Featured Productions
                     </h2>
-                    <p>
+                    <p class="f-barlow">
                         Here's just a small sample of some of those projects that we're quite proud of. If you're
                         looking
                         for something specific feel free to get in contact with us.
@@ -137,14 +137,14 @@ export default {
                     <div class="process-content">
                         <div class="section-header wow fadeInDown" data-wow-delay="0.3s"
                             style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
-                            <h5 class="section-cete">
+                            <h5 class="section-cete f-chakra">
                                 Our Process
                             </h5>
                             <h2 class="section-title">
                                 Our Process for Your
                                 Animation Production
                             </h2>
-                            <p>
+                            <p class="f-barlow">
                                 We have an effective process for working on animation
                             </p>
                         </div>
@@ -161,7 +161,7 @@ export default {
                                                 <h4>
                                                     <a href="#0">{{ process[workIdx].title }}</a>
                                                 </h4>
-                                                <p>
+                                                <p class="f-barlow">
                                                     {{ process[workIdx].text }}
                                                 </p>
                                             </div>
@@ -216,6 +216,7 @@ export default {
             font-size: 24px;
             line-height: 31.2px;
             margin-top: -3px;
+            margin-bottom: 25px;
             font-family: "Chakra Petch", sans-serif;
             color: #4d36dc;
         }
@@ -223,6 +224,7 @@ export default {
         h2 {
             font-weight: 700;
             font-size: 57px;
+            color: #311852;
             line-height: 74.1px;
             margin-top: -12px;
             font-family: "Chakra Petch", sans-serif;
@@ -317,8 +319,8 @@ export default {
         }
 
         .section-title {
-            font-weight: 700;
-            color: black;
+            font-weight: 600;
+            color: #311852;
             margin-bottom: 5px;
             font-size: 57px;
             line-height: 74.1px;

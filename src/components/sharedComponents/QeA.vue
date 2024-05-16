@@ -28,9 +28,9 @@ export default {
 
    </div>
 
-   <div class="d-flex bg-white justify-content-between align-items-center border rounded-2 my-2 p-2 px-3">
+   <div class="d-flex bg-white justify-content-between align-items-center border rounded-2 my-2 p-3 px-3">
 
-      <h4 class="m-0">{{ qeaElem.question }}</h4>
+      <span class="m-0 fw-medium">{{ qeaElem.question }}</span>
 
       <button @click="getAnswer" class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
 
@@ -42,7 +42,7 @@ export default {
 
    </div>
 
-   <div v-if="qeaElem.answerOut" class="d-flex justify-content-between align-items-center px-3">
+   <div v-if="qeaElem.answerOut" class="px-3">
 
       <p>{{ qeaElem.answer }}</p>
 
@@ -54,6 +54,6 @@ export default {
 .logo-container {
    height: 35px;
    width: 35px;
-
 }
+
 </style>

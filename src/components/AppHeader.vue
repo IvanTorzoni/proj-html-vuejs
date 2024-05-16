@@ -11,7 +11,7 @@ export default {
                     routeName: "home",
                 },
                 {
-                    title: "About",
+                    title: "About Us",
                     routeName: "about",
                 },
                 {
@@ -62,17 +62,17 @@ export default {
         <img src="../assets/img/main-img/logo.png" alt="" />
         <ul class="d-flex gap-3 px-4 align-items-center">
 
-            <li v-for="item in menu">
+            <li v-for="item in menu" class="ms_fw-500 ms_fs-list f-chakra">
 
                 <!-- router link serve come a tag HTML (questo tag fa parte del router stesso). Aggiungere to="{ name : valore corrente del ciclo.nome inserito nel name del router }" -->
                 <router-link :to="{ name: item.routeName }">
-                    <span>{{ item.title }}</span>
+                    <span class="ms_fw-600">{{ item.title }}</span>
                 </router-link>
 
             </li>
 
-            <li>
-                <span class="quote-btn">Get a Quote </span>
+            <li class="ms_fw-500 ms_fs-list f-chakra">
+                <span class="quote-btn ms_fw-600">Get a Quote </span>
             </li>
 
         </ul>

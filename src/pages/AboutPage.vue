@@ -22,7 +22,7 @@ export default {
     return{
       serviceArray : [
         {
-           serviceImage : "process1",
+           serviceImage : "process4",
            serviceTitle : "Motion Graphics",
            serviceP : "The best in the business, served to your audience's eyeballs"
         },
@@ -32,7 +32,7 @@ export default {
           serviceP : "The best in the business, served to your audience's eyeballs"
         },
         {
-          serviceImage : "process4",
+          serviceImage : "process1",
           serviceTitle : "Storyboards",
           serviceP : "The best in the business, served to your audience's eyeballs"
         },
@@ -47,7 +47,7 @@ export default {
           serviceP : "The best in the business, served to your audience's eyeballs"
         },
         {
-          serviceImage : "process4",
+          serviceImage : "process1",
           serviceTitle : "Script Writing",
           serviceP : "The best in the business, served to your audience's eyeballs",
         }
@@ -75,9 +75,9 @@ export default {
   <section class="service-section ms_pt-120 ms_pb-120">
     <div class="container">
       <div class="section-header text-center">
-        <h4>Our Service</h4>
-        <span class="ms_title-size">Animations, Bespoke and Beautiful </span>
-        <p>With the magic of imagination we are able to tell stories, animate adventures, create art</p>
+        <h4 class="f-chakra ms_sub-color">Our Service</h4>
+        <span class="f-chakra  ms_fs-h-big">Animations, Bespoke and Beautiful </span>
+        <p class="f-barlow">With the magic of imagination we are able to tell stories, animate adventures, create art</p>
       </div>
       <div class="row">
         <!-- Colonna -->

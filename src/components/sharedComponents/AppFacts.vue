@@ -35,7 +35,7 @@ export default {
       </div>
       <div class="container">
          <div class="section-header section-center">
-            <h2 class="section-title text-white">
+            <h2 class="section-title text-white f-chakra">
                Anidio Quick Facts
             </h2>
          </div>
@@ -46,7 +46,7 @@ export default {
                      <div class="row">
                         <div class="col-lg-3 g-3" v-for="(card) in facts">
                            <div class="ms_card_facts text-center">
-                              <h3>{{ card.clients }}</h3>
+                              <h3 class="ms_fs-h-big f-chakra">{{ card.clients }}</h3>
                               <p class="ms-text-orange">{{ card.paragraph }}</p>
                            </div>
                         </div>

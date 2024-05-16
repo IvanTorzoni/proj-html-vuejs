@@ -52,8 +52,8 @@ export default {
                <div class="row">
                   <!-- Colonna da 9/12 -->
                   <div class="col-lg-9 text-center">
-                     <h6> Our Love For Animation </h6>
-                     <h1> We're Storytelling Experts <br> With Creative Smarts </h1>
+                     <h4 class="ms_sub-color"> Our Love For Animation </h4>
+                     <h2 class="f-chakra ms_fs-h-big"> We're Storytelling Experts <br> With Creative Smarts </h2>
                   </div>
                   <!-- /Colonna-->
                </div>
@@ -61,10 +61,10 @@ export default {
                <!-- Inizio seconda sub-row -->
                <div class="row">
                   <div class="col-lg-4 d-flex g-4" v-for="(card,i) in skillTree" >
-                     <div class="ms_card text-center" :style="{ backgroundImage : getBgGradient(i) }">
+                     <div class="ms_card text-center f-chakra" :style="{ backgroundImage : getBgGradient(i) }">
                         <img :src="getImageSkill(card.skillImage)">
-                        <h3>{{ card.skillTitle }}</h3>
-                        <p>{{ card.paragraph }}</p>
+                        <h3 class="ms_fs-h-med pt-3 ms_fw-500">{{ card.skillTitle }}</h3>
+                        <p class="f-barlow ms_f-p">{{ card.paragraph }}</p>
                      </div>
                   </div>
                </div>

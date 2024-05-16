@@ -59,9 +59,9 @@ export default {
       </div>
       <!--Sezione titoli-->
       <div class="text-center">
-         <h5 class="ms-text-l-purple pb-2"> Anidio Magic Team Member </h5>
-         <h1 class="pb-2">Let Us Animate Your Project </h1>
-         <p class="pb-5">We create new worlds! Let's collaborate and create engaging, effective, award-winning animations </p>
+         <h5 class="ms-text-l-purple pb-2 f-chakra"> Anidio Magic Team Member </h5>
+         <h1 class="pb-2 f-chakra ms_fs-h-big">Let Us Animate Your Project </h1>
+         <p class="pb-5 f-barlow">We create new worlds! Let's collaborate and create engaging, effective, award-winning animations </p>
       </div>
       <!-- /Titoli-->
 
@@ -70,8 +70,8 @@ export default {
          <div class="team-slide-track d-flex gap-4 justify-content-between align-items-center h-100 p-5">
             <div class="member-slide col-4 text-center p-2" v-for="item in multiplyTeam">
                <img :src="getMemberPic(item.memberPic)" class="member-img" />
-               <h5 class="pt-1 pb-1">{{ item.memberName }}</h5>
-               <p>{{ item.memberRole }}</p>
+               <h5 class="pt-1 pb-1 f-chakra ms_fw-600 ms_sub-color">{{ item.memberName }}</h5>
+               <p class="f-barlow ms_fw-500 ms_sub-color2">{{ item.memberRole }}</p>
                <ul class="d-flex justify-content-center gap-2">
                   <li class="ms-text-l-purple circle-icon"><a class="fa-brands fa-facebook-f" href="#"></a></li>
                   <li class="ms-text-l-purple circle-icon"><a class="fa-brands fa-twitter" href="#"></a></li>

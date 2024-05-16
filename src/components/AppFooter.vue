@@ -7,7 +7,7 @@ export default {
          // General Menu Links
          menu: [
             {
-               title: "About",
+               title: "About Us",
                routeName: "about",
             },
             {
@@ -55,7 +55,7 @@ export default {
 <template>
 
    <!-- Newsletter - Section -->
-   <section class="counter-section py-3">
+   <section class="counter-section  ms_pt-80 ms_pb-80">
 
       <div class="count-top-shape">
          <img src="../assets/Img/main-img/shape-top.png" alt="counter-shape">
@@ -64,19 +64,19 @@ export default {
       <!-- Contents Newsletter -->
       <div class="container-sm d-flex flex-column justify-content-center align-items-center p-5">
 
-         <h5 class="ms-font-cp ms-text-orange">We Create New Worlds!</h5>
+         <h5 class="ms-font-cp ms-text-orange f-chakra ms_fw-500 mb-4">We Create New Worlds!</h5>
 
-         <h2 class="ms-font-cp text-white text-center">Want Tips On Your <br> Storytelling?</h2>
+         <h2 class="ms-font-cp text-white text-center ms_fs-h-big f-chakra">Want Tips On Your <br> Storytelling?</h2>
 
-         <p class="font-b text-white">Join our newsletter for tips on how to elevate your brand through storytelling</p>
+         <p class="font-b text-white f-barlow mb-5">Join our newsletter for tips on how to elevate your brand through storytelling</p>
 
          <!-- Email Imput&Submit -->
-         <div class="bg-white w-75 d-flex justify-content-between p-2  rounded-pill">
+         <div class="bg-white w-65 d-flex justify-content-between p-2  rounded-pill">
 
-            <input class="rounded-pill border border-white flex-fill" type="email" aria-label="Enter your email"
+            <input class="rounded-pill border border-white flex-fill p-2" type="email" aria-label="Enter your email"
                placeholder="Enter your email">
 
-            <button class="ms-bg-pink btn rounded-pill ms-2">Submit</button>
+            <button class="ms-bg-pink btn rounded-pill ms-2 mr-3"><span class="p-3">Submit</span></button>
 
          </div>
          <!-- /Email Imput&Submit -->
@@ -92,9 +92,9 @@ export default {
    <!-- /Newsletter - Section -->
 
    <!-- Footer -->
-   <footer class="py-5">
+   <footer class="ms_pt-120 pb-5">
 
-      <div class="container">
+      <div class="container ">
 
          <!-- Footer Menu - Section -->
          <section class="d-flex justify-content-between align-items-center">
@@ -108,13 +108,13 @@ export default {
             <!-- /Footer Logo -->
 
             <!-- Footer Menu -->
-            <ul class="row row-col-6 text-end ms-font-cp">
+            <ul class="d-flex flex-end gap-4 ms-font-cp">
 
-               <li v-for="item in menu" class="col">
+               <li v-for="item in menu">
 
                   <router-link :to="{ name: item.routeName }">
 
-                     <span class="col fw-bold">{{ item.title }}</span>
+                     <span class="fw-semibold d-block">{{ item.title }}</span>
 
                   </router-link>
 
@@ -132,20 +132,20 @@ export default {
          <!-- Footer Copyright - Section -->
          <section class="d-flex justify-content-between align-items-center">
 
-            <p class="col m-0">Copyright © 2022 <a class="ms-text-l-purple"
+            <p class="col m-0 f-barlow ms_fw-400">Copyright © 2022 <a class="ms-text-l-purple f-chakra ms_fw-500"
                   href="https://www.templatemonster.com/authors/softivus/"><strong>Softivus</strong></a>. All rights
                reserved. </p>
 
             <!-- Footer Socials -->
-            <ul class="row row-col-6 text-end">
+            <ul class="row row-col-6 text-end gap-3">
 
-               <li v-for="social in socialsMenu" class="col justify-content-end">
+               <li v-for="social in socialsMenu" class="col justify-content-end ms-text-l-purple circle-icon social">
 
-                  <div class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
+                  <div class="logo-container d-flex justify-content-center align-items-center">
 
-                     <a href="">
+                     <a href="#">
    
-                        <i class="ms-text-l-purple" :class="`${social.iconClasses}`"></i>
+                        <i class="ms-text-l-purple ms_fs-small" :class="`${social.iconClasses}`"></i>
    
                      </a>
 
@@ -167,6 +167,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.ms_fw-400{
+   font-weight: 400;
+}
+.ms_fs-small{
+   font-size: 14px;
+}
 .counter-section {
    background: url(../assets/Img/main-img/counter-bg.png) no-repeat center center;
    background-size: cover;
@@ -200,8 +206,33 @@ export default {
 }
 
 .logo-container {
-   height: 25px;
-   width: 25px;
+   height: 15px;
+   width: 15px;
 
+}
+
+.ms_pt-80{
+   padding-top: 80px;
+}
+
+.ms_pb-80{
+   padding-bottom: 80px;
+}
+
+.w-65{
+   width: 65%;
+}
+
+.social{
+   transition: 0.7s;
+}
+
+.social:hover{
+   background-color: orange;  
+   transition: 0.7s;
+      i{
+         color: white;
+         transition: 0.7s;
+      } 
 }
 </style>

@@ -125,11 +125,11 @@ export default {
       <!-- Section Titles -->
       <div class="text-center my-5">
 
-        <h5 class="ms-font-cp ms-text-l-purple">Contact Us</h5>
+        <h5 class="f-chakra ms-text-l-purple">Contact Us</h5>
 
-        <h2 class="ms-font-cp ms-text-d-purple">How to Reach Us</h2>
+        <h2 class="f-chakra ms_fs-h-big ms-text-d-purple">How to Reach Us</h2>
 
-        <p class="font-b ms-text-d-purple">We're always interested in having a chat or discussing your next
+        <p class="font-b ms-text-d-purple f-barlow">We're always interested in having a chat or discussing your next
           big project,
           so drop us a line!</p>
 
@@ -146,7 +146,7 @@ export default {
           <!-- Infos -->
           <div class="col-5">
 
-            <h3 class="ms-font-cp ms-text-d-purple mb-4">Reach us directly!</h3>
+            <h3 class="ms-font-cp ms-text-d-purple mb-4 f-chakra ms_fw-600">Reach us directly!</h3>
 
             <div class="row g-2">
 
@@ -189,9 +189,9 @@ export default {
             <!-- Sub-Section Titles -->
             <div class="text-center">
 
-              <h2>Contact Form</h2>
+              <h2 class="ms_fw-700">Contact Form</h2>
 
-              <p>Tell us your story and let's make it awesome</p>
+              <p class="f-barlow">Tell us your story and let's make it awesome</p>
 
             </div>
             <!-- /Sub-Section Titles -->
@@ -200,7 +200,7 @@ export default {
 
               <div class="mb-3">
 
-                <label for="user-name" class="form-label">NAME</label>
+                <label for="user-name" class="form-label ms_fw-500">NAME</label>
 
                 <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp"
                   placeholder="What's your name?">
@@ -209,7 +209,7 @@ export default {
 
               <div class="mb-3">
 
-                <label for="user-email" class="form-label">EMAIL</label>
+                <label for="user-email" class="form-label ms_fw-500">EMAIL</label>
 
                 <input type="email" class="form-control" id="user-email" placeholder="What's your email?">
 
@@ -217,7 +217,7 @@ export default {
 
               <div class="mb-3">
 
-                <label for="user-phone" class="form-label">PHONE</label>
+                <label for="user-phone" class="form-label ms_fw-500">PHONE</label>
 
                 <input type="number" class="form-control" id="user-phone" placeholder="Your Phone Number">
 
@@ -225,7 +225,7 @@ export default {
 
               <div class="mb-3">
 
-                <label for="user-text" class="form-label">LEAVE A MESSAGE</label>
+                <label for="user-text" class="form-label ms_fw-500">LEAVE A MESSAGE</label>
 
                 <textarea class="form-control" id="user-text" rows="3"
                   placeholder="Please, type your message here..."></textarea>
@@ -269,11 +269,11 @@ export default {
       <!-- Section Titles -->
       <div class="text-center my-5">
 
-        <h5 class="ms-font-cp ms-text-l-purple">We're Here to Help</h5>
+        <h5 class="ms-font-cp ms-text-l-purple f-chakra">We're Here to Help</h5>
 
-        <h2 class="ms-font-cp ms-text-d-purple">Frequently Asked Questions</h2>
+        <h2 class="ms-font-cp ms-text-d-purple ms_fw-700">Frequently Asked Questions</h2>
 
-        <p class="font-b ms-text-d-purple">We're always interested in having a chat or discussing your next
+        <p class="font-b ms-text-d-purple f-barlow">We're always interested in having a chat or discussing your next
           big project, so drop us a line!</p>
 
       </div>
@@ -309,7 +309,7 @@ export default {
   background-color: $pj-lighter-purple;
   width: 100%;
   object-fit: fill;
-  height: 20px;
+  height: 40px;
   display: block;
 }
 

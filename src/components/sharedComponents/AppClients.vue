@@ -27,11 +27,12 @@ export default {
 </script>
 
 <template>
-   <div class="container pt-3">
+  <section class="ms_pt-120 ms_pb-120">
+   <div class="container">
       <div class="text-center">
-         <h5 class="ms-text-l-purple pb-2">Why Anidio studio?</h5>
-         <h1 class="pb-2">We Love Our Clients </h1>
-         <p class="pb-2">We are trusted throughout adland and have a wealth of recommendations from start-ups to renowned global brands.</p>
+         <h5 class="ms-text-l-purple pb-2 f-chakra">Why Anidio studio?</h5>
+         <h1 class="pb-2 f-chakra ms_fs-h-big">We Love Our Clients </h1>
+         <p class="pb-2 f-barlow">We are trusted throughout adland and have a wealth of recommendations from start-ups to renowned global brands.</p>
       </div>
    </div>
    <div class="sponsor-slider pb-2">
@@ -41,6 +42,7 @@ export default {
        </div>
      </div>
    </div>
+  </section>
  </template>
  
  <style>

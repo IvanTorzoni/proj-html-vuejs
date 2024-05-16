@@ -30,8 +30,8 @@ export default {
 
    &:hover {
       transition: 0.7s;
-      color: white;
-      border: 1px solid white;
+      color: #b2aafb;
+      border: 1px solid #b2aafb;
       background-color: rgba(0, 0, 0, 0);
 
    }

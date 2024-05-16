@@ -25,9 +25,9 @@ export default {
 
          <div class="row justify-content-start">
 
-            <h1 class="text-white ms-font-cp"> {{ pageObj.pageName }} </h1>
+            <h1 class="text-white f-chakra ms_fs-h-big mb-4"> {{ pageObj.pageName }} </h1>
 
-            <h2 class="text-white ms-font-cp">Home <i class="fa-solid fa-arrow-right-long"></i> {{ pageObj.pageName }} </h2>
+            <h5 class="text-white"> <span class="f-chakra">Home</span> <i class="fa-solid fa-arrow-right-long"></i> {{ pageObj.pageName }} </h5>
 
          </div>
 

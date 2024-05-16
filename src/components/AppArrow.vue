@@ -50,6 +50,7 @@ export default{
     display: block;
     transition: all 0.7s;
     bottom: 20px;
+    cursor: pointer;
 }
 
 .progress:hover{

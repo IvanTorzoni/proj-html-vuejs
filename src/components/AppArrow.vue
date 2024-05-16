@@ -27,7 +27,7 @@ export default{
 </script>
 
 <template>
-    <div :class="{ 'progress' : scrolPerc >= 18 , 'hidden' : scrolPerc < 18 }" @click="backToTheTop">
+    <div :class="{ 'progress' : scrolPerc >= 16 , 'hidden' : scrolPerc < 16 }" @click="backToTheTop">
         <span id="valiu">
             <i class="fas fa-arrow-up"></i>
         </span>

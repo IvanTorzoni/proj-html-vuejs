@@ -58,7 +58,7 @@ export default {
 
 <template>
     <div class="ms-bg-purple">
-    <header :class="{ 'ms-bg-purple': scrolPerc >= 18 }" class = "container d-flex flex-row align-items-center justify-content-between px-5">
+    <header :class="{ 'ms-bg-purple': scrolPerc >= 15 }" class = "container d-flex flex-row align-items-center justify-content-between px-5">
         <img src="../assets/img/main-img/logo.png" alt="" />
         <ul class="d-flex gap-3 px-4 align-items-center">
 

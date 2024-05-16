@@ -2,7 +2,8 @@
 export default {
     data() {
         return {
-            
+            //Variabile che gestisce la percentuale in scrolling
+            scrolPerc : 0,
             //Gestione link del menù
             menu: [
                 {
@@ -36,14 +37,28 @@ export default {
             ]
 
         }
-    }
+    },
+    //All'avvio della pagina inizia il calcolo dello scrolling, all'evento scroll
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+            //Valore sull'asse delle y della pagina, window.scrollY Prende i pixel del documento in verticale
+            const scrollYaxis = window.scrollY || document.documentElement.scrollTop;
+            //sottrae dall'Altezza totale del documento (scrollabile) la window.innerHeight ossia la parte visibile della page
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            //calcolo percentuale
+            this.scrolPerc = (scrollYaxis / windowHeight) * 100;
+        }
+  }
+};
 
-}
 </script>
 
 <template>
     <div class="ms-bg-purple">
-    <header class = "container d-flex flex-row align-items-center justify-content-between ms-bg-purple px-5">
+    <header :class="{ 'ms-bg-purple': scrolPerc >= 18 }" class = "container d-flex flex-row align-items-center justify-content-between px-5">
         <img src="../assets/img/main-img/logo.png" alt="" />
         <ul class="d-flex gap-3 px-4 align-items-center">
 
@@ -74,6 +89,7 @@ header{
     font-size: 1rem;
     max-width: 100%;
     position: fixed;
+    transition: background-color 0.5s ease;
     img{
         max-width: 125px;
     }

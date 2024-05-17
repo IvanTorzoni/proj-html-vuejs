@@ -3,20 +3,36 @@ export default {
    props: {
 
       qeaElem: Object,
+      idNumber: Number,
 
+   },
+
+   data() {
+      return {
+
+         activeId: null,
+         
+      }
    },
 
    methods: {
 
-      getAnswer() {
+      // getAnswer() {
 
-         console.log("clicked");
+      //    console.log(this.idNumber);
 
-         this.qeaElem.answerOut = !this.qeaElem.answerOut
+      //    this.qeaElem.answerOut = !this.qeaElem.answerOut
 
-      },
 
-   }
+      // },
+
+   },
+
+   emits: [
+
+      'getAnswer',
+
+   ],
 
 }
 
@@ -24,15 +40,12 @@ export default {
 
 <template>
 
-   <div>
-
-   </div>
-
    <div class="d-flex bg-white justify-content-between align-items-center border rounded-2 my-2 p-3 px-3">
 
-      <span class="m-0 fw-medium">{{ qeaElem.question }}</span>
+      <span class="m-0 fw-medium" :class="{ selected: qeaElem.answerOut }"> {{ qeaElem.question }} </span>
 
-      <button @click="getAnswer" class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
+      <button @click="$emit('getAnswer', idNumber)"
+         class="logo-container border rounded-circle d-flex justify-content-center align-items-center">
 
          <i v-if="qeaElem.answerOut" class="fa-solid fa-minus ms-text-l-purple"></i>
 
@@ -56,4 +69,7 @@ export default {
    width: 35px;
 }
 
+.selected {
+   color: #0c63e4;
+}
 </style>

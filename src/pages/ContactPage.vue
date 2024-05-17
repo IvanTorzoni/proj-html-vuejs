@@ -62,36 +62,43 @@ export default {
       qeaList: [
 
         {
+          id: 1,
           question: "How do I know what kind of video I need?",
           answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
           answerOut: false,
         },
         {
+          id: 2,
           question: "Do you currently have career openings?",
           answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
           answerOut: false,
         },
         {
+          id: 3,
           question: "How long will it take to create an animation video?",
           answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
           answerOut: false,
         },
         {
+          id: 4,
           question: "How long do you need for the video creation process?",
           answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
           answerOut: false,
         },
         {
+          id: 5,
           question: "Will I take part in the creation process?",
           answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
           answerOut: false,
         },
         {
+          id: 6,
           question: "What type / format of animated video can I order?",
           answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
           answerOut: false,
         },
         {
+          id: 7,
           question: "What if I don’t like what you deliver?",
           answer: "Quisque ultricies enim ac lacus feugiat mattis. In et ipsum sed tellus interdum mattis sit amet id mi. Phasellus nec eros in felis blandit cursus. Nulla facilisi. Nam in purus elit. Aenean tempor volutpat ante .",
           answerOut: false,
@@ -108,6 +115,34 @@ export default {
       }
 
     }
+  },
+
+  methods: {
+
+    getActiveQeA(activeId) {
+
+      console.log("getActiveQeA", activeId);
+
+      this.qeaList.forEach(element => {
+
+        if (element.answerOut && element.id !== activeId) {
+
+          console.log("if different");
+
+          element.answerOut = false;
+
+        } else if (element.id === activeId) {
+
+          console.log("if same");
+
+          element.answerOut = !element.answerOut
+
+        };
+
+      });
+
+    },
+
   }
 
 }
@@ -115,7 +150,7 @@ export default {
 
 <template>
 
-  <SimpleJumbo :pageObj="page"/>
+  <SimpleJumbo :pageObj="page" />
 
   <!-- Contact Us - Section -->
   <div class="container-lg">
@@ -141,10 +176,10 @@ export default {
 
         <img class="wave" src="../assets/Img/main-img/shape-top.png" alt="background waves">
 
-        <div class="row ms-bg-l-purple d-flex justify-content-between align-items-center p-5 mx-0">
+        <div class="row ms-bg-l-purple d-flex justify-content-between align-items-center py-5 px-3 mx-0">
 
           <!-- Infos -->
-          <div class="col-5">
+          <div class="col-5 p-0">
 
             <h3 class="ms-font-cp ms-text-d-purple mb-4 f-chakra ms_fw-600">Reach us directly!</h3>
 
@@ -282,7 +317,7 @@ export default {
       <!-- Q&A Accordion -->
       <div class="w-75 mx-auto mb-5">
 
-        <QeA v-for="element in qeaList" :qeaElem="element" />
+        <QeA @getAnswer="getActiveQeA" v-for="element in qeaList" :qeaElem="element" :idNumber="element.id" />
 
       </div>
       <!-- /Q&A Accordion -->
@@ -313,7 +348,7 @@ export default {
   display: block;
 }
 
-.sphere{
+.sphere {
   position: absolute;
   right: 0;
   top: -100px;
@@ -321,7 +356,7 @@ export default {
 
 }
 
-.man{
+.man {
   position: absolute;
   left: 0;
   top: 20%;

@@ -68,7 +68,8 @@ export default {
 
          <h2 class="ms-font-cp text-white text-center ms_fs-h-big f-chakra">Want Tips On Your <br> Storytelling?</h2>
 
-         <p class="font-b text-white f-barlow mb-5">Join our newsletter for tips on how to elevate your brand through storytelling</p>
+         <p class="font-b text-white f-barlow mb-5">Join our newsletter for tips on how to elevate your brand through
+            storytelling</p>
 
          <!-- Email Imput&Submit -->
          <div class="bg-white w-65 d-flex justify-content-between p-2  rounded-pill">
@@ -144,9 +145,9 @@ export default {
                   <div class="logo-container d-flex justify-content-center align-items-center">
 
                      <a href="#">
-   
+
                         <i class="ms-text-l-purple ms_fs-small" :class="`${social.iconClasses}`"></i>
-   
+
                      </a>
 
                   </div>
@@ -167,12 +168,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.ms_fw-400{
+
+input:focus-visible {
+   outline-width: 0px;
+}
+
+.ms_fw-400 {
    font-weight: 400;
 }
-.ms_fs-small{
+
+.ms_fs-small {
    font-size: 14px;
 }
+
 .counter-section {
    background: url(../assets/Img/main-img/counter-bg.png) no-repeat center center;
    background-size: cover;
@@ -190,7 +198,7 @@ export default {
 
       img {
          display: block;
-      color: rgba(1,1,1,0);
+         color: rgba(1, 1, 1, 0);
 
       }
    }
@@ -211,28 +219,29 @@ export default {
 
 }
 
-.ms_pt-80{
+.ms_pt-80 {
    padding-top: 80px;
 }
 
-.ms_pb-80{
+.ms_pb-80 {
    padding-bottom: 80px;
 }
 
-.w-65{
+.w-65 {
    width: 65%;
 }
 
-.social{
+.social {
    transition: 0.7s;
 }
 
-.social:hover{
-   background-color: orange;  
+.social:hover {
+   background-color: orange;
    transition: 0.7s;
-      i{
-         color: white;
-         transition: 0.7s;
-      } 
+
+   i {
+      color: white;
+      transition: 0.7s;
+   }
 }
 </style>

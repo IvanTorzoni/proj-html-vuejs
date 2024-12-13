@@ -11,24 +11,47 @@ export default {
     AppHeader,
     AppFooter,
     AppArrow
-  }
+  },
+
+  data() {
+    return {
+
+      isLoaded: false,
+
+    }
+  },
+
+  mounted() {
+
+		this.isLoaded = true;
+
+    console.log("isLoaded", this.isLoaded);
+
+	},
 
 }
 </script>
 
 <template>
 
-  <AppHeader />
+  <div v-if="!isLoaded">Loading...</div>
 
-  <!-- Tag per i componenti del router (pagine dinamiche). Per i componenti fissi come header footer ecc inserire il tag del componente corrispettivo -->
-  <router-view></router-view>
+  <div v-else>
 
-  <AppFooter />
-  <AppArrow />
+    <AppHeader />
+
+    <!-- Tag per i componenti del router (pagine dinamiche). Per i componenti fissi come header footer ecc inserire il tag del componente corrispettivo -->
+    <router-view></router-view>
+
+    <AppFooter />
+
+    <AppArrow />
+
+  </div>
+
 </template>
 
 <style lang="scss">
-
 @use "./style/partials/variables" as *;
 
 // TYPOGRAPHY UTILITIES
@@ -86,5 +109,4 @@ export default {
   background-color: $pj-lighter-purple;
 
 }
-
 </style>
